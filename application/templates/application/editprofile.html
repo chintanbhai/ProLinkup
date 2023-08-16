@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Style -->
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header {
+            background-color: rgb(84, 177, 121);
+            background-size: cover;
+            background-position: center;
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .profile-container {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 5%;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2%;
+        }
+
+        /* Add styles for the profile avatar */
+        #profile-avatar {
+            width: 15%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 2%;
+        }
+
+        .profile-details {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Adjust email font size for responsiveness */
+        .profile-email {
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Customize form styling */
+        form {
+            margin-top: 2rem;
+        }
+
+        /* Style form buttons */
+        .btn-primary {
+            margin-top: 1rem;
+        }
+
+    </style>
+    <title>User Profile</title>
+</head>
+
+<body>
+    <div class="header">
+        User Profile
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 contents">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="profile-container">
+                                <form method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        <a href="{% url 'profilepage' %}" class="btn btn-primary">Cancel</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

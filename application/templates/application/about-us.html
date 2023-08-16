@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
+    <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
+    <meta name="author" content="hastech"/>
+
+    <title>About Us | ProLinkup</title>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" href="{% static 'img/icons/logo.png' %}" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet"> {% endcomment %}
+
+    <!--== Bootstrap CSS ==-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+  <!-- == Icofont Icon CSS == -->
+  {% comment %}
+  <link href="assets/css/icofont.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+  <!-- == Swiper CSS == -->
+  {% comment %}
+  <link href="assets/css/swiper.min.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+  <!-- == Fancybox Min CSS == -->
+  {% comment %}
+  <link href="assets/css/fancybox.min.css" rel="stylesheet" /> {% endcomment %}
+  <link href="{% static 'css/fancybox.min.css' %}" rel="stylesheet" />
+
+  <!-- == Aos Min CSS == -->
+  {% comment %}
+  <link href="assets/css/aos.min.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/aos.min.css' %}">
+
+  <!-- == Main Style CSS == -->
+  {% comment %}
+  <link href="assets/css/style.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper">
+
+  <!--== Start Header Wrap per ==-->
+  <header class="header-area transparent">
+    <div class="container">
+      <div class="row no-gutter align-items-center position-relative">
+        <div class="col-12">
+          <div class="header-align">
+            <div class="header-align-start">
+              <div class="header-logo-area">
+                <a href="{% url 'home' %}">
+                  <img class="logo-main" src="{% static 'img/icons/logo.png' %}" alt="Logo" />
+                  <img class="logo-light" src="{% static 'img/icons/logo.png' %}" alt="Logo" />
+                </a>
+              </div>
+            </div>
+            <div class="header-align-center">
+              <div class="header-navigation-area position-relative">
+                <ul class="main-menu nav">
+                  <li>
+                    <a href="{% url 'home' %}"><span>Home</span></a>
+                  </li>
+                  <li class="has-submenu">
+                    <a href="{% url 'job' %}"><span>Find Jobs</span></a>
+                  </li>
+                  <li class="has-submenu">
+                    <a href="{% url 'candidate' %}"><span>Candidates</span></a>
+                  </li>
+                  <li class="has-submenu">
+                    <a href="{% url 'aboutus' %}"><span> About Us</span></a>
+                  </li>
+                  
+                  <li>
+                    <a href="{% url 'contact' %}"><span>Contact</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {% if user.is_authenticated %}
+
+              <div class="header-align-end">
+                <div class="header-action-area">
+                <a class="btn-registration" href="{% url 'logout' %}"><span>+</span> Log Out</a>&nbsp;
+                  <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu"
+                    aria-controls="AsideOffcanvasMenu"><i class="icofont-navigation-menu"></i></button>
+                </div>
+              {% else %}
+              <div class="header-align-end">
+                <div class="header-action-area">
+                  <a class="btn-registration" href="{% url 'registration' %}"><span>+</span> Registration</a>&nbsp;
+
+                  <a class="btn-registration" href="{% url 'login' %}"><span>+</span> Login</a>
+                  <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu"
+                    aria-controls="AsideOffcanvasMenu"><i class="icofont-navigation-menu"></i></button>
+                </div>
+
+                {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--== End Header Wrapper ==-->
+    
+  <main class="main-content">
+
+    <!--== Start Page Header Area Wrapper ==-->
+    <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="{% static 'img/companies/back1.jpg' %}">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-header-content">
+              <h2 class="title">About Us</h2>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li class="breadcrumb-sep">//</li>
+                  <li>About Us</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Page Header Area Wrapper ==-->
+
+    <!--== Start About Area Wrapper ==-->
+    <section class="about-area about-default-wrapper">
+      <div class="container">
+        <div class="about-item">
+          <div class="row">
+            <div class="col-md-6 col-lg-3">
+              <div class="about-thumb" data-aos="fade-down" data-aos-duration="1000">
+                <img src="{% static 'img/about/1.jpg' %}" alt="Image-HasTech">
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="about-thumb about-thumb-two" data-aos="fade-down" data-aos-duration="1200">
+                <img src="{% static 'img/about/2.jpg' %}" alt="Image-HasTech">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="about-content" data-aos="fade-down" data-aos-duration="1000">
+                <h3 class="title">ProLinkup help your for get your dream job and build your bright career.</h3>
+                <p class="desc">It is a long established fact that a reader will be distracted the readable content of a page when looking at its layout. The point of using is that has more-or-less normal a distribution of letters, as opposed to using 'Content publishing packages web page editors.</p>
+                <div class="member-join-content" data-aos="fade-right" data-aos-duration="1200">
+                  <div class="member-join-thumb">
+                    <ul>
+                      <li>
+                        <a href="candidate-details.html">
+                          <img src="{% static 'img/team/1.jpg' %}" width="50" height="50" alt="Image-HasTech">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="candidate-details.html">
+                          <img src="{% static 'img/team/1.jpg' %}" width="50" height="50" alt="Image-HasTech">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="candidate-details.html">
+                          <img src="{% static 'img/team/2.jpg' %}" width="50" height="50" alt="Image-HasTech">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="candidate-details.html">
+                          <img src="{% static 'img/team/3.jpg' %}" width="50" height="50" alt="Image-HasTech">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="candidate-details.html">
+                          <img src="{% static 'img/team/4.jpg' %}" width="50" height="50" alt="Image-HasTech">
+                          <span>+</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="member-join-btn">
+                    <a class="join-now-btn" href="{% url 'job' %}"><span>+</span> Apply Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End About Area Wrapper ==-->
+
+    <!--== Start Funfact Area Wrapper ==-->
+    {% comment %} <section class="funfact-area bg-color-gray">
+      <div class="container">
+        <div class="row no-gutter">
+          <div class="col-12">
+            <div class="funfact-content-wrap">
+              <div class="funfact-col">
+                <!--== Start Funfact Item ==-->
+                <div class="funfact-item" data-aos="fade-down">
+                  <h2 class="counter-number"><span class="counter" data-counterup-delay="50">5689</span></h2>
+                  <h6 class="counter-title">Total Jobs</h6>
+                </div>
+                <!--== End Funfact Item ==-->
+              </div>
+              <div class="funfact-col">
+                <!--== Start Funfact Item ==-->
+                <div class="funfact-item" data-aos="fade-down" data-aos-duration="1500">
+                  <h2 class="counter-number"><span class="counter" data-counterup-delay="50">8567</span></h2>
+                  <h6 class="counter-title">Candidates</h6>
+                </div>
+                <!--== End Funfact Item ==-->
+              </div>
+              <div class="funfact-col">
+                <!--== Start Funfact Item ==-->
+                <div class="funfact-item" data-aos="fade-down" data-aos-duration="1700">
+                  <h2 class="counter-number"><span class="counter" data-counterup-delay="50">7457</span></h2>
+                  <h6 class="counter-title">Resume</h6>
+                </div>
+                <!--== End Funfact Item ==-->
+              </div>
+              <div class="funfact-col">
+                <!--== Start Funfact Item ==-->
+                <div class="funfact-item" data-aos="fade-down" data-aos-duration="1900">
+                  <h2 class="counter-number"><span class="counter" data-counterup-delay="50">6483</span></h2>
+                  <h6 class="counter-title">Compnay’s</h6>
+                </div>
+                <!--== End Funfact Item ==-->
+              </div>
+              <div class="funfact-col">
+                <!--== Start Funfact Item ==-->
+                <div class="funfact-item" data-aos="fade-down" data-aos-duration="2200">
+                  <h2 class="counter-number"><span class="counter" data-counterup-delay="50">358</span></h2>
+                  <h6 class="counter-title">Country’s</h6>
+                </div>
+                <!--== End Funfact Item ==-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> {% endcomment %}
+    <!--== End Funfact Area Wrapper ==-->
+
+    <!--== Start Team Area Wrapper ==-->
+    
+    <!--== End Team Area Wrapper ==-->
+
+    <!--== Start Divider Area Wrapper ==-->
+    {% comment %} <section class="sec-overlay sec-overlay-theme bg-img" data-bg-img="assets/img/photos/bg1.webp">
+      <div class="container pt--0 pb--0">
+        <div class="row justify-content-center divider-style1">
+          <div class="col-lg-7">
+            <div class="divider-content text-center">
+              <h4 class="sub-title" data-aos="fade-down">Trial Version Available</h4>
+              <h2 class="title" data-aos="fade-down">Download Our Mobile App. <br>You Can Ready Resume & Apply Job.</h2>
+              <div class="divider-btn-group">
+                <a class="btn-divider" data-aos="fade-down" href="page-not-found.html">
+                  <img src="assets/img/photos/google-play.png" width="201" height="63" class="icon" alt="Image-HasTech">
+                </a>
+                <a class="btn-divider btn-divider-app-store" data-aos="fade-down" href="page-not-found.html">
+                  <img src="assets/img/photos/mac-os.png" width="201" height="63" class="icon" alt="Image-HasTech">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-layer-style1"></div>
+      <div class="bg-layer-style2"></div>
+    </section> {% endcomment %}
+    <!--== End Divider Area Wrapper ==-->
+
+    <!--== Start Testimonial Area Wrapper ==-->
+    <section class="testimonial-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title text-center" data-aos="fade-down">
+              <h3 class="title">Our Happy Clients</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" data-aos="fade-down">
+            <div class="swiper testi-slider-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!--== Start Testimonial Item ==-->
+                  <div class="testimonial-item testimonial-style2-item">
+                    <div class="testi-inner-content">
+                      <div class="testi-author">
+                        <div class="testi-thumb">
+                          <img src="{% static 'img/team/1.jpg' %}" width="75" height="75" alt="Image-HasTech">
+                        </div>
+                        <div class="testi-info">
+                          <h4 class="name">Chintan Bhutiya</h4>
+                          <span class="designation">Hiring Manager</span>
+                        </div>
+                      </div>
+                      <div class="testi-content">
+                        <p class="desc">It is a long established fact that reader will distracted the readable content page looking at its layout point using that has more-or-less normal distribution of letters opposed using content making.</p>
+                        <div class="rating-box">
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                        </div>
+                        <div class="testi-quote"><img src="{% static 'img/icons/quote1.png' %}" alt="Image-HasTech"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--== End Testimonial Item ==-->
+                </div>
+                <div class="swiper-slide">
+                  <!--== Start Testimonial Item ==-->
+                  <div class="testimonial-item testimonial-style2-item">
+                    <div class="testi-inner-content">
+                      <div class="testi-author">
+                        <div class="testi-thumb">
+                          <img src="{% static 'img/team/2.jpg' %}" width="75" height="75" alt="Image-HasTech">
+                        </div>
+                        <div class="testi-info">
+                          <h4 class="name">Mihir Modhwadiya</h4>
+                          <span class="designation">Hiring Manager</span>
+                        </div>
+                      </div>
+                      <div class="testi-content">
+                        <p class="desc">It is a long established fact that reader will distracted the readable content page looking at its layout point using that has more-or-less normal distribution of letters opposed using content making.</p>
+                        <div class="rating-box">
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                        </div>
+                        <div class="testi-quote"><img src="{% static 'img/icons/quote1.png' %}" alt="Image-HasTech"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--== End Testimonial Item ==-->
+                </div>
+                <div class="swiper-slide">
+                  <!--== Start Testimonial Item ==-->
+                  <div class="testimonial-item testimonial-style2-item">
+                    <div class="testi-inner-content">
+                      <div class="testi-author">
+                        <div class="testi-thumb">
+                          <img src="{% static 'img/team/3.jpg' %}" width="75" height="75" alt="Image-HasTech">
+                        </div>
+                        <div class="testi-info">
+                          <h4 class="name">Soneirsinh Jadeja</h4>
+                          <span class="designation">Hiring Manager</span>
+                        </div>
+                      </div>
+                      <div class="testi-content">
+                        <p class="desc">It is a long established fact that reader will distracted the readable content page looking at its layout point using that has more-or-less normal distribution of letters opposed using content making.</p>
+                        <div class="rating-box">
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                        </div>
+                        <div class="testi-quote"><img src="{% static 'img/icons/quote1.png' %}" alt="Image-HasTech"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--== End Testimonial Item ==-->
+                </div>
+                <div class="swiper-slide">
+                  <!--== Start Testimonial Item ==-->
+                  <div class="testimonial-item testimonial-style2-item">
+                    <div class="testi-inner-content">
+                      <div class="testi-author">
+                        <div class="testi-thumb">
+                          <img src="{% static 'img/team/4.jpg' %}" width="75" height="75" alt="Image-HasTech">
+                        </div>
+                        <div class="testi-info">
+                          <h4 class="name">Yash parmar</h4>
+                          <span class="designation">Hiring Manager</span>
+                        </div>
+                      </div>
+                      <div class="testi-content">
+                        <p class="desc">It is a long established fact that reader will distracted the readable content page looking at its layout point using that has more-or-less normal distribution of letters opposed using content making.</p>
+                        <div class="rating-box">
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                        </div>
+                        <div class="testi-quote"><img src="{% static 'img/icons/quote1.png' %}" alt="Image-HasTech"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--== End Testimonial Item ==-->
+                </div>
+                <div class="swiper-slide">
+                  <!--== Start Testimonial Item ==-->
+                  <div class="testimonial-item testimonial-style2-item">
+                    <div class="testi-inner-content">
+                      <div class="testi-author">
+                        <div class="testi-thumb">
+                          <img src="{% static 'img/team/5.jpg' %}" width="75" height="75" alt="Image-HasTech">
+                        </div>
+                        <div class="testi-info">
+                          <h4 class="name">Shubham Salet</h4>
+                          <span class="designation">Hiring Manager</span>
+                        </div>
+                      </div>
+                      <div class="testi-content">
+                        <p class="desc">It is a long established fact that reader will distracted the readable content page looking at its layout point using that has more-or-less normal distribution of letters opposed using content making.</p>
+                        <div class="rating-box">
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                          <i class="icofont-star"></i>
+                        </div>
+                        <div class="testi-quote"><img src="{% static 'img/icons/quote1.png' %}" alt="Image-HasTech"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--== End Testimonial Item ==-->
+                </div>
+              </div>
+
+              <!--== Add Swiper Pagination ==-->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Testimonial Area Wrapper ==-->
+
+                  </div>
+                </div>
+              </div>
+              <!--== Add Swiper Arrows ==-->
+              <div class="swiper-btn-wrap">
+                <div class="brand-swiper-btn-prev">
+                  <i class="icofont-long-arrow-left"></i>
+                </div>
+                <div class="brand-swiper-btn-next">
+                  <i class="icofont-long-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Brand Logo Area Wrapper ==-->
+    
+  </main>
+ 
+  <!--== Start Footer Area Wrapper ==-->
+  <footer class="footer-area">
+    <!-- == Start Footer Top == -->
+    <!-- == End Footer Top == -->
+
+    <!-- == Start Footer Main == -->
+    <div class="footer-main">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="widget-item widget-about">
+              <div class="widget-logo-area">
+                <a href="{% url 'home' %}"><img src="/static/img/icons/logo.png" height="10px" alt="Logo" style="
+                  height: 190px;
+              "></a>
+              </div>
+              {% comment %} <p class="desc">That necessitat ecommerce platform that optimi your store popularised the release</p> {% endcomment %}
+              <div class="social-icons">
+                <a href="https://www.facebook.com/yash.paramar.180?mibextid=ZbWKwL" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                <a href="https://join.skype.com/invite/unmcMxvLV2mh" target="_blank" rel="noopener"><i class="icofont-skype"></i></a>
+                <a href="https://twitter.com/chintan190905" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row">
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item1">
+                  <h4 class="widget-title">Company</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">
+                    Company</h4>
+                  <div id="widgetId-1" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li>
+                            <a href="{% url 'aboutus' %}">About Us</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'contact' %}">Contact With Us</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-4">
+                <div class="widget-item nav-menu-item2">
+                  <h4 class="widget-title">Resources</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">
+                    Resources</h4>
+                  <div id="widgetId-2" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li>
+                            <a href="{% url 'login' %}">Quick Links</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'job' %}">Job Packages</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-4">
+                <div class="widget-item nav-menu-item4">
+                  <h4 class="widget-title">Products</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">
+                    Products</h4>
+                  <div id="widgetId-4" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li>
+                            <a href="{% url 'login' %}">Star a Trial</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'aboutus' %}">How It Works</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'login' %}">Features</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- == End Footer Main == -->
+
+    <!-- == Start Footer Bottom == -->
+    <div class="footer-bottom">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom-content">
+              <p class="copyright">
+                © 2023 ProLinkup. Made with <i class="icofont-heart"></i> by <a target="_blank"
+                  href="">Chintan.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- == End Footer Bottom == -->
+  </footer>
+  <!--== End Footer Area Wrapper ==-->
+
+  <!--== Start Aside Menu ==-->
+  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
+      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="fa fa-chevron-left"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Mobile Menu Start -->
+      <div class="mobile-menu-items">
+        <ul class="nav-menu">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'job' %}">Find Job</a></li>
+          <li><a href="{% url 'candidate' %}">Candidates</a></li>
+          <li><a href="{% url 'aboutus' %}">About Us</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Mobile Menu End -->
+    </div>
+  </aside>
+  <!--== End Aside Menu ==-->
+
+</div>
+
+<!--=======================Javascript============================-->
+
+<!--=== jQuery Modernizr Min Js ===-->
+<script src="{% static 'js/modernizr.js' %}"></script>
+  <!-- === jQuery Min Js === -->
+  {% comment %} <script src="assets/js/jquery-main.js"></script> {% endcomment %}
+  <script src="{% static 'js/jquery-main.js' %}"></script>
+  <!-- === jQuery Migration Min Js === -->
+  {% comment %} <script src="assets/js/jquery-migrate.js"></script> {% endcomment %}
+  <script src="{% static 'js/jquery-migrate.js' %}"></script>
+  <!-- === jQuery Popper Min Js === -->
+  {% comment %} <script src="assets/js/popper.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/popper.min.js' %}"></script>
+
+  <!-- === jQuery Bootstrap Min Js === -->
+  {% comment %} <script src="assets/js/bootstrap.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- === jQuery Swiper Min Js === -->
+  {% comment %} <script src="assets/js/swiper.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/swiper.min.js' %}"></script>
+  <!-- === jQuery Fancybox Min Js === -->
+  {% comment %} <script src="assets/js/fancybox.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/fancybox.min.js' %}"></script>
+  <!-- === jQuery Aos Min Js === -->
+  {% comment %} <script src="assets/js/aos.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/aos.min.js' %}"></script>
+  <!-- === jQuery Counterup Min Js === -->
+  {% comment %} <script src="assets/js/counterup.js"></script> {% endcomment %}
+  <script src="{% static 'js/counterup.js' %}"></script>
+  <!-- === jQuery Waypoint Js === -->
+  {% comment %} <script src="assets/js/waypoint.js"></script> {% endcomment %}
+  <script src="{% static 'js/waypoint.js' %}"></script>
+  
+  <!-- === jQuery Custom Js === -->
+  {% comment %} <script src="assets/js/custom.js"></script> {% endcomment %}
+  <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+</html>

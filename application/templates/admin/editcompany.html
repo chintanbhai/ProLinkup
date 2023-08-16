@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-label {
+            font-weight: bold;
+        }
+        .custom-form {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-submit {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 custom-form">
+            {% if key1 %}
+
+            <form method="post" action="{% url 'update' pk=key1.id %}" >
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="formFileMultipleoneone" class="form-label">Add Logo</label>
+                    <input class="form-control" type="file" id="formFileMultipleoneone" value="{{key1.company_image.url}}" name='image'>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput177" class="form-label">Company Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput177" placeholder="Enter Company Name" value="{{key1.company_name}}" name='company_name'>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput177" class="form-label">City</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput177" placeholder="Enter City Name" value="{{key1.address}}" name="city">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput477" class="form-label">Email ID</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput477" placeholder="a@gmail.com" value="{{key1.email}}" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput477" class="form-label">Time</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput477" placeholder="[Half time, Full Time]" value="{{key1.time}}" name="time">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput477" class="form-label">Salary</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput477" placeholder="[Half time, Full Time]" value="{{key1.salary}}" name="salary">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput477" class="form-label">languages</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput477" placeholder="[Half time, Full Time]" value="{{key1.languages}}" name="languages">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput777" class="form-label">Which type of Developer</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput777" placeholder="[Front end, Back end]" value="{{key1.developer}}" name='developer'>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

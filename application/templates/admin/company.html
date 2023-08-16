@@ -1,0 +1,471 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Company | ProLinkup</title>
+    <link rel="icon" href="{% static 'img/icons/logo.png' %}" type="image/x-icon"> <!-- Favicon-->
+    <!-- project css file  -->
+    <link rel="stylesheet" href="{% static 'css/admin/my-task.style.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+</head>
+<body>
+
+<div id="mytask-layout" class="theme-indigo">
+
+    <!-- sidebar -->
+    <div class="sidebar px-4 py-4 py-md-5 me-0">
+        <div class="d-flex flex-column h-100">
+            <a href="index.html" class="mb-0 brand-icon">
+                <span class="logo-icon">
+                    <svg  width="35" height="35" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                    </svg>
+                </span>
+                <span class="logo-text">My-Task</span>
+            </a>
+            <!-- Menu: main ul -->
+            <ul class="menu-list flex-grow-1 mt-3">
+                <a class="m-link " data-bs-target="#dashboard-Components" href="{% url 'Adminhome' %}">
+                    <i class="icofont-home fs-5"></i> <span>Dashboard</span> <span
+                        class="arrow  ms-auto text-end fs-5"></span></a>
+                <a class="m-link active" data-bs-target="#project-Components" href="{% url 'Admincompany' %}">
+                    <i class="icofont-ui-office"></i><span>Company</span> <span
+                        class="arrow  ms-auto text-end fs-5"></span></a>
+                <a class="m-link" data-bs-target="#project-Components" href="#">
+                    <i class="icofont-building-alt"></i><span>City</span> <span
+                        class="arrow  ms-auto text-end fs-5"></span></a>
+                <a class="m-link" data-bs-target="#project-Components" href="{% url 'Adminuser' %}">
+                    <i class="icofont-user-male"></i><span>Manage User</span> <span
+                        class="arrow  ms-auto text-end fs-5"></span></a>
+                <a class="m-link" data-bs-target="#project-Components" href="{% url 'Admincontact' %}">
+                    <i class="icofont-ui-message"></i><span>Enquiry</span> <span
+                        class="arrow  ms-auto text-end fs-5"></span></a>
+                <a class="m-link" data-bs-target="#project-Components" href="#">
+                    <i class="icofont-logout"></i><span>Log Out</span> <span
+                        class="arrow  ms-auto text-end fs-5"></span></a>
+            </ul>
+
+            <!-- Theme: Switch Theme -->
+            <ul class="list-unstyled mb-0">
+                <li class="d-flex align-items-center justify-content-center">
+                    <div class="form-check form-switch theme-switch">
+                        <input class="form-check-input" type="checkbox" id="theme-switch">
+                        <label class="form-check-label" for="theme-switch">Enable Dark Mode!</label>
+                    </div>
+                </li>
+            </ul>
+            <!-- Menu: menu collepce btn -->
+        </div>
+    </div>
+
+    <!-- main body area -->
+    <div class="main px-lg-4 px-md-4">
+
+        <!-- Body: Header -->
+        <div class="header">
+            <nav class="navbar py-4">
+                <div class="container-xxl">
+    
+                    <!-- header rightbar icon -->
+                    <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
+                        <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center zindex-popover">
+                            <div class="u-info me-2">
+                                <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">Dylan Hunter</span></p>
+                                <small>Admin Profile</small>
+                            </div>
+                            <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
+                                <img class="avatar lg rounded-circle img-thumbnail" src="{% static 'img/Admin/xs/avatar1.jpg' %}" alt="profile">
+                            </a>
+                            <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
+                                <div class="card border-0 w280">
+                                    <div class="card-body pb-0">
+                                        <div class="d-flex py-1">
+                                            <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile">
+                                            <div class="flex-fill ms-3">
+                                                <p class="mb-0"><span class="font-weight-bold">Dylan Hunter</span></p>
+                                                <small class="">Dylan.hunter@gmail.com</small>
+                                            </div>
+                                        </div>
+                                        
+                                        <div><hr class="dropdown-divider border-dark"></div>
+                                    </div>
+                                    <div class="list-group m-2 ">
+                                        {% comment %} <a href="task.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-tasks fs-5 me-3"></i>My Task</a> {% endcomment %}
+                                        {% comment %} <a href="members.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-ui-user-group fs-6 me-3"></i>members</a> {% endcomment %}
+                                        <a href="ui-elements/auth-signin.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-logout fs-6 me-3"></i>Signout</a>
+                                        <div><hr class="dropdown-divider border-dark"></div>
+                                        <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0 "><i class="icofont-contact-add fs-5 me-3"></i>Add personal account</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- menu toggler -->
+                    <button class="navbar-toggler p-0 border-0 menu-toggle order-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeader">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    
+                    <!-- main menu Search-->
+                    <div class="order-0 col-lg-4 col-md-4 col-sm-12 col-12 mb-3 mb-md-0 ">
+                        <div class="input-group flex-nowrap input-group-lg">
+                            {% comment %} <button type="button" class="input-group-text" id="addon-wrapping"><i class="fa fa-search"></i></button>
+                            <input type="search" class="form-control" placeholder="Search" aria-label="search" aria-describedby="addon-wrapping">
+                            <button type="button" class="input-group-text add-member-top" id="addon-wrappingone" data-bs-toggle="modal" data-bs-target="#addUser"><i class="fa fa-plus"></i></button> {% endcomment %}
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Body: Body -->
+        <div class="body d-flex py-lg-3 py-md-2">
+            <div class="container-xxl">
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <div class="card border-0 mb-4 no-bg">
+                            <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
+                                <h3 class=" fw-bold flex-fill mb-0">Company</h3>
+                                <div class="col-auto d-flex">
+                                    
+                                    <button type="submit" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Company</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Row End -->
+                {% if key1 %}
+                <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4">
+                    {% for i in key1 %}
+                    <div class="col">
+                        <div class="card teacher-card">
+                            <div class="card-body  d-flex">
+                                <div class="profile-av pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
+                                    <img src="{{MEDIA_URL}}{{ i.company_image.url }}" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
+                                    <div class="about-info d-flex align-items-center mt-1 justify-content-center flex-column">
+                                        <h6 class="mb-0 fw-bold d-block fs-6 mt-2">Company</h6>
+                                        <div class="btn-group mt-2" role="group" aria-label="Basic outlined example">
+                                            <form action="{% url 'editcompany' pk=i.id %}" method="post" name="editcompany">
+                                                {% csrf_token %}
+                                            <button type="submit" class="btn btn-outline-secondary" data-bs-target="#editproject"><i class="icofont-edit text-success"></i></button>
+                                            </form>
+                                            <form action="{% url 'deletecompany' pk=i.id %}" method="post" name="deletecompany">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-outline-secondary"  data-bs-target="#deleteproject"><i class="icofont-ui-delete text-danger"></i></button>
+                                            </form>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="teacher-info border-start ps-xl-4 ps-md-3 ps-sm-4 ps-4 w-100">
+                                    <h6  class="mb-0 mt-2  fw-bold d-block fs-6">{{i.company_name}}</h6>
+                                    <div class="video-setting-icon mt-3 pt-3 border-top">
+                                        <p><b>City :</b>{{i.address}}</p>
+                                        <p><b>Email :</b>{{i.email}}</p>
+                                        <p><b>Salary :</b>{{i.salary}}</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+        
+       <!-- Modal Members-->
+       {% comment %} <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title  fw-bold" id="addUserLabel">Employee Invitation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="inviteby_email">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1">
+                        <button class="btn btn-dark" type="button" id="button-addon2">Sent</button>
+                    </div>
+                </div>
+                <div class="members_list">
+                    <h6 class="fw-bold ">Employee </h6>
+                    <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
+                        <li class="list-group-item py-3 text-center text-md-start">
+                            <div class="d-flex align-items-center flex-column flex-sm-column flex-md-row">
+                                <div class="no-thumbnail mb-2 mb-md-0">
+                                    <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
+                                </div>
+                                <div class="flex-fill ms-3 text-truncate">
+                                    <h6 class="mb-0  fw-bold">Rachel Carr(you)</h6>
+                                    <span class="text-muted">rachel.carr@gmail.com</span>
+                                </div>
+                                <div class="members-action">
+                                    <span class="members-role ">Admin</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="icofont-ui-settings  fs-6"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                          <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
+                                          <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-3 text-center text-md-start">
+                            <div class="d-flex align-items-center flex-column flex-sm-column flex-md-row">
+                                <div class="no-thumbnail mb-2 mb-md-0">
+                                    <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                                </div>
+                                <div class="flex-fill ms-3 text-truncate">
+                                    <h6 class="mb-0  fw-bold">Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a></h6>
+                                    <span class="text-muted">lucas.baker@gmail.com</span>
+                                </div>
+                                <div class="members-action">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Members
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                          <li>
+                                              <a class="dropdown-item" href="#">
+                                                <i class="icofont-check-circled"></i>
+                                                    Member
+                                                <span>Can view, edit, delete, comment on and save files</span>
+                                               </a>
+                                               
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fs-6 p-2 me-1"></i>
+                                                        Admin
+                                                    <span>Member, but can invite and manage team members</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="icofont-ui-settings  fs-6"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                          <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-3 text-center text-md-start">
+                            <div class="d-flex align-items-center flex-column flex-sm-column flex-md-row">
+                                <div class="no-thumbnail mb-2 mb-md-0">
+                                    <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
+                                </div>
+                                <div class="flex-fill ms-3 text-truncate">
+                                    <h6 class="mb-0  fw-bold">Una Coleman</h6>
+                                    <span class="text-muted">una.coleman@gmail.com</span>
+                                </div>
+                                <div class="members-action">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Members
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                          <li>
+                                              <a class="dropdown-item" href="#">
+                                                <i class="icofont-check-circled"></i>
+                                                    Member
+                                                <span>Can view, edit, delete, comment on and save files</span>
+                                               </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fs-6 p-2 me-1"></i>
+                                                        Admin
+                                                    <span>Member, but can invite and manage team members</span>
+                                                   </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="icofont-ui-settings  fs-6"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                              <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
+                                              <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
+                                              <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a></li>
+                                              <li><a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+       </div> {% endcomment %}
+
+       <!-- Create Company-->
+       <div class="modal fade" id="createproject" tabindex="-1"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                   
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="deadline-form">
+                        <form method="post" action="{% url 'addcompany' %}" name="addcompany" enctype="multipart/form-data"> 
+                            {% csrf_token %}
+                            <div class="row g-3 mb-3">
+                                <div class="col">
+                                    <label for="exampleFormControlInput177" class="form-label">Add Logo</label>
+                                    <input class="form-control" type="file" id="formFileMultipleoneone" name='image'>
+                                {% comment %} <input type="text" class="form-control" id="exampleFormControlInput177" placeholder="User Name"> {% endcomment %}
+                                </div>
+                                <div class="col">
+                                    <label for="exampleFormControlInput177" class="form-label">Company Name</label>
+                                    <input name="company_name" type="text" class="form-control" id="exampleFormControlInput177" placeholder="Enter Company Name">
+                                </div>
+                                <div class="col">
+                                    <label for="exampleFormControlInput177" class="form-label">City</label>
+                                    <input name="city" type="text" class="form-control" id="exampleFormControlInput177" placeholder="Enter City Name">
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col">
+                                    <label for="exampleFormControlInput477" class="form-label">Email ID</label>
+                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput477" placeholder="a@gmail.com">
+                                </div>
+                                <div class="col">
+                                    <label for="exampleFormControlInput477" class="form-label">Time</label>
+                                    <input name="time" type="text" class="form-control" id="exampleFormControlInput477" placeholder="[Half time , Full Time]">
+                                </div>
+                                <div class="col">
+                                    <label for="exampleFormControlInput777" class="form-label">Which type of Developer</label>
+                                    <input name="developer" type="text" class="form-control" id="exampleFormControlInput777" placeholder="[Front end , Back end]">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">          
+                            <label for="exampleFormControlTextarea78" class="form-label">Salary</label>
+                            <input name="salary" type="number" placeholder="Salary" class="form-control" id="exampleFormControlInput777" required>
+                        </div> 
+                        <div class="mb-3">          
+                            <label for="exampleFormControlTextarea78" class="form-label">languages</label>
+                            <textarea name="languages" class="form-control" id="exampleFormControlTextarea78" rows="3" placeholder="Java , javascript , Python .."></textarea>
+                        </div> 
+                    </div>
+                    <div class="modal-footer">
+                        {% comment %} <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button> {% endcomment %}
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div> 
+                </form>
+            </div>  
+        </div>
+       </div>
+        <!-- Edit Company-->
+        <div class="modal fade" id="editproject" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="deadline-form">
+                            <form>
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="exampleFormControlInput177" class="form-label">Add Logo</label>
+                                        <input class="form-control" type="file" id="formFileMultipleoneone" >
+                                    {% comment %} <input type="text" class="form-control" id="exampleFormControlInput177" placeholder="User Name"> {% endcomment %}
+                                    </div>
+                                    <div class="col">
+                                        <label for="exampleFormControlInput177" class="form-label">Company Name</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput177" placeholder="Enter Company Name">
+                                    </div>
+                                    <div class="col">
+                                        <label for="exampleFormControlInput177" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput177" placeholder="Enter City Name">
+                                    </div>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="exampleFormControlInput477" class="form-label">Email ID</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput477" placeholder="a@gmail.com">
+                                    </div>
+                                    <div class="col">
+                                        <label for="exampleFormControlInput477" class="form-label">Time</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput477" placeholder="[Half time , Full Time]">
+                                    </div>
+                                    <div class="col">
+                                        <label for="exampleFormControlInput777" class="form-label">Which type of Developer</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput777" placeholder="[Front end , Back end]">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="mb-3">          
+                            <label for="exampleFormControlTextarea78" class="form-label">Salary</label>
+                            <input type="number" placeholder="Salary" class="form-control" id="exampleFormControlInput777" required>
+                        </div> 
+                        <div class="mb-3">          
+                            <label for="exampleFormControlTextarea78" class="form-label">languages</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea78" rows="3" placeholder="Java , javascript , Python .."></textarea>
+                        </div> 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                        <button type="button" class="btn btn-primary">Create</button>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+
+        <!-- Modal  Delete Folder/ File-->
+        <div class="modal fade" id="deleteproject" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title  fw-bold" id="deleteprojectLabel"> Delete Company Permanently?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body justify-content-center flex-column d-flex">
+                    <i class="icofont-ui-delete text-danger display-2 text-center mt-2"></i>
+                    <p class="mt-4 fs-5 text-center">You can only delete this Company Permanently</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    
+                    <button type="button" class="btn btn-danger color-fff">Delete</button>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jquery Core Js -->
+<script src="{% static 'js/Admin-bundles/libscripts.bundle.js' %}"></script>
+
+<!-- Jquery Page Js -->
+<!-- <script src="assets/js/template.js"></script> -->
+</body>
+</html>

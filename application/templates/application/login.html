@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5" />
+  <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive" />
+  <meta name="author" content="hastech" />
+
+  <title>Login | ProLinkup</title>
+  
+  <!--== Favicon ==-->
+  <link rel="shortcut icon" href="{% static 'img/icons/logo.png' %}" type="image/x-icon" />
+
+  <!--== Google Fonts ==-->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+
+
+  <!--== Bootstrap CSS ==-->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+  <!-- == Icofont Icon CSS == -->
+  {% comment %}
+  <link href="assets/css/icofont.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+  <!-- == Swiper CSS == -->
+  {% comment %}
+  <link href="assets/css/swiper.min.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+  <!-- == Fancybox Min CSS == -->
+  {% comment %}
+  <link href="assets/css/fancybox.min.css" rel="stylesheet" /> {% endcomment %}
+  <link href="{% static 'css/fancybox.min.css' %}" rel="stylesheet" />
+
+  <!-- == Aos Min CSS == -->
+  {% comment %}
+  <link href="assets/css/aos.min.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/aos.min.css' %}">
+
+  <!-- == Main Style CSS == -->
+  {% comment %}
+  <link href="assets/css/style.css" rel="stylesheet" /> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+  <!--wrapper start-->
+  <div class="wrapper">
+
+    <!--== Start Header Wrapper ==-->
+    <header class="header-area transparent">
+      <div class="container">
+        <div class="row no-gutter align-items-center position-relative">
+          <div class="col-12">
+            <div class="header-align">
+              <div class="header-align-start">
+                <div class="header-logo-area">
+                  <a href="{% url 'home' %}">
+                    <img class="logo-main" src="{% static 'img/icons/logo.png' %}" alt="Logo" />
+                    <img class="logo-light" src="{% static 'img/icons/logo.png' %}" alt="Logo" />
+                  </a>
+                </div>
+              </div>
+              <div class="header-align-center">
+                <div class="header-navigation-area position-relative">
+                  <ul class="main-menu nav">
+                    <li>
+                      <a href="{% url 'home' %}"><span>Home</span></a>
+                    </li>
+                    <li class="has-submenu">
+                      <a href="{% url 'job' %}"><span>Find Jobs</span></a>
+                    </li>
+                    <li class="has-submenu">
+                      <a href="{% url 'candidate' %}"><span>Candidates</span></a>
+                    </li>
+                    {% comment %} <li>
+                      <a href="{% url 'empDetail' %}"><span>Employers Details</span></a>
+                    </li> {% endcomment %}
+
+                    <li class="has-submenu">
+                      <a href="{% url 'aboutus' %}"><span> About Us</span></a>
+                    </li>
+
+                    <li>
+                      <a href="{% url 'contact' %}"><span>Contact</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="header-align-end">
+                <div class="header-action-area">
+                  <a class="btn-registration" href="{% url 'registration' %}"><span>+</span> Registration</a>&nbsp;
+
+                  <a class="btn-registration" href="{% url 'login' %}"><span>+</span> Login</a>
+                  <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu"
+                    aria-controls="AsideOffcanvasMenu"><i class="icofont-navigation-menu"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--== End Header Wrapper ==-->
+
+    <main class="main-content">
+      <!--== Start Page Header Area Wrapper ==-->
+      <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="{% static 'img/companies/back1.jpg' %}">
+        <div class="container pt--0 pb--0">
+          <div class="row">
+            <div class="col-12">
+              <div class="page-header-content">
+                <h2 class="title">Login</h2>
+                <nav class="breadcrumb-area">
+                  <ul class="breadcrumb justify-content-center">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-sep">//</li>
+                    <li>Pages</li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--== End Page Header Area Wrapper ==-->
+
+      <!--== Start Login Area Wrapper ==-->
+      <section class="account-login-area">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+              <div class="login-register-form-wrap">
+                <div class="login-register-form">
+                  <div class="form-title">
+                    <h4 class="title">Sign In</h4>
+                    <center>
+                      <h4 style="color: red">{{msg}}</h4>
+                    </center>
+                  </div>
+                  <form action="{% url 'Datalogin' %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input class="form-control" type="text" placeholder="Username" name="username" value="{{request.POST.username}}" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input class="form-control" type="password" placeholder="Password" name="password" required>
+                          {% comment %} <span class="eye" style="position: absolute;">
+                            <i id="toggleIcon" class="icofont-eye" onclick="togglePasswordVisibility()"></i>
+                          </span> {% endcomment %}
+                        </div>
+                      </div>
+                      
+                      <div class="col-12">
+                        <div class="form-group">
+                          <button type="submit" class="btn-theme">Sign In</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="login-register-form-info">
+                    <p>Don't you have an account? <a href="{% url 'registration' %}">Register</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Login Area Wrapper ==-->
+    </main>
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area">
+      <!-- == Start Footer Top == -->
+      <!-- == End Footer Top == -->
+  
+      <!-- == Start Footer Main == -->
+      <div class="footer-main">
+        <div class="container pt--0 pb--0">
+          <div class="row">
+            <div class="col-md-6 col-lg-3">
+              <div class="widget-item widget-about">
+                <div class="widget-logo-area">
+                  <a href="{% url 'home' %}"><img src="/static/img/icons/logo.png" height="10px" alt="Logo" style="
+                    height: 190px;
+                "></a>
+                </div>
+                {% comment %} <p class="desc">That necessitat ecommerce platform that optimi your store popularised the release</p> {% endcomment %}
+                <div class="social-icons">
+                  <a href="https://www.facebook.com/yash.paramar.180?mibextid=ZbWKwL" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                  <a href="https://join.skype.com/invite/unmcMxvLV2mh" target="_blank" rel="noopener"><i class="icofont-skype"></i></a>
+                  <a href="https://twitter.com/chintan190905" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <div class="row">
+                <div class="col-md-3 col-lg-3">
+                  <div class="widget-item nav-menu-item1">
+                    <h4 class="widget-title">Company</h4>
+                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">
+                      Company</h4>
+                    <div id="widgetId-1" class="collapse widget-collapse-body">
+                      <div class="collapse-body">
+                        <div class="widget-menu-wrap">
+                          <ul class="nav-menu">
+                            <li>
+                              <a href="{% url 'aboutus' %}">About Us</a>
+                            </li>
+                            <li>
+                              <a href="{% url 'contact' %}">Contact With Us</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-4">
+                  <div class="widget-item nav-menu-item2">
+                    <h4 class="widget-title">Resources</h4>
+                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">
+                      Resources</h4>
+                    <div id="widgetId-2" class="collapse widget-collapse-body">
+                      <div class="collapse-body">
+                        <div class="widget-menu-wrap">
+                          <ul class="nav-menu">
+                            <li>
+                              <a href="{% url 'login' %}">Quick Links</a>
+                            </li>
+                            <li>
+                              <a href="{% url 'job' %}">Job Packages</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-4">
+                  <div class="widget-item nav-menu-item4">
+                    <h4 class="widget-title">Products</h4>
+                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">
+                      Products</h4>
+                    <div id="widgetId-4" class="collapse widget-collapse-body">
+                      <div class="collapse-body">
+                        <div class="widget-menu-wrap">
+                          <ul class="nav-menu">
+                            <li>
+                              <a href="{% url 'login' %}">Star a Trial</a>
+                            </li>
+                            <li>
+                              <a href="{% url 'aboutus' %}">How It Works</a>
+                            </li>
+                            <li>
+                              <a href="{% url 'login' %}">Features</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- == End Footer Main == -->
+  
+      <!-- == Start Footer Bottom == -->
+      <div class="footer-bottom">
+        <div class="container pt--0 pb--0">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer-bottom-content">
+                <p class="copyright">
+                  © 2023 ProLinkup. Made with <i class="icofont-heart"></i> by <a target="_blank"
+                    href="">Chintan.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- == End Footer Bottom == -->
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
+
+    <!--== Start Aside Menu ==-->
+    <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu"
+      aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
+        <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i
+            class="icofont-simple-left"></i></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Mobile Menu Start -->
+        <div class="mobile-menu-items">
+          <ul class="nav-menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'job' %}">Find Job</a></li>
+            <li><a href="{% url 'candidate' %}">Candidates</a></li>
+            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Mobile Menu End -->
+      </div>
+    </aside>
+    <!--== End Aside Menu ==-->
+  </div>
+
+  <!--=======================Javascript============================-->
+
+  <!--=== jQuery Modernizr Min Js ===-->
+  <script src="{% static 'js/modernizr.js' %}"></script>
+  <!-- === jQuery Min Js === -->
+  {% comment %}
+  <script src="assets/js/jquery-main.js"></script> {% endcomment %}
+  <script src="{% static 'js/jquery-main.js' %}"></script>
+  <!-- === jQuery Migration Min Js === -->
+  {% comment %}
+  <script src="assets/js/jquery-migrate.js"></script> {% endcomment %}
+  <script src="{% static 'js/jquery-migrate.js' %}"></script>
+  <!-- === jQuery Popper Min Js === -->
+  {% comment %}
+  <script src="assets/js/popper.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/popper.min.js' %}"></script>
+
+  <!-- === jQuery Bootstrap Min Js === -->
+  {% comment %}
+  <script src="assets/js/bootstrap.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- === jQuery Swiper Min Js === -->
+  {% comment %}
+  <script src="assets/js/swiper.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/swiper.min.js' %}"></script>
+  <!-- === jQuery Fancybox Min Js === -->
+  {% comment %}
+  <script src="assets/js/fancybox.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/fancybox.min.js' %}"></script>
+  <!-- === jQuery Aos Min Js === -->
+  {% comment %}
+  <script src="assets/js/aos.min.js"></script> {% endcomment %}
+  <script src="{% static 'js/aos.min.js' %}"></script>
+  <!-- === jQuery Counterup Min Js === -->
+  {% comment %}
+  <script src="assets/js/counterup.js"></script> {% endcomment %}
+  <script src="{% static 'js/counterup.js' %}"></script>
+  <!-- === jQuery Waypoint Js === -->
+  {% comment %}
+  <script src="assets/js/waypoint.js"></script> {% endcomment %}
+  <script src="{% static 'js/waypoint.js' %}"></script>
+
+  <!-- === jQuery Custom Js === -->
+  {% comment %}
+  <script src="assets/js/custom.js"></script> {% endcomment %}
+  <script src="{% static 'js/custom.js' %}"></script>
+
+  <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      var toggleIcon = document.getElementById("toggleIcon");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.classList.replace("icofont-eye", "icofont-eye-blocked");
+      } else {
+        passwordInput.type = "password";
+        toggleIcon.classList.replace("icofont-eye-blocked", "icofont-eye");
+      }
+    }
+  </script>
+</body>
+
+</html>
